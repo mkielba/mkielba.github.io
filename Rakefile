@@ -11,24 +11,23 @@ end
 
 desc 'Deploys Jekyll to Github Pages.'
 task :deploy => ["git:add_all", "git:commit", "git:push"] do 
+  puts "test 0"
 end
 
 namespace :git do
   
   task :add_all do
-    `git add .`
+    puts `git add .`
   end
   
   task :commit do
-    `git commit`
+    puts `git commit`
   end
   
   desc 'Pushes master branch to origin repository'
   task :push do
-    `git push origin master --tags`
+    puts "Pushing to Git"
+    exec "git push origin master --tags"
   end
 
 end
-
-
- 
